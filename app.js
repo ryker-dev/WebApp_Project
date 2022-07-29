@@ -11,9 +11,11 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/user');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const threadRouter = require('./routes/thread');
 const apiUserRouter = require('./api/user');
 const apiPrivateRouter = require('./api/private');
 const apiTodoRouter = require('./api/todos');
+const apiThreadRouter = require('./api/thread');
 
 
 const app = express();
@@ -38,10 +40,11 @@ app.use('/', indexRouter);
 //app.use('/user', usersRouter);
 app.use('/api/user', apiUserRouter);
 app.use('/api/private', apiPrivateRouter);
+app.use('/thread', threadRouter);
 //app.use('/api/todos', apiTodoRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-
+app.use('/api/thread', apiThreadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

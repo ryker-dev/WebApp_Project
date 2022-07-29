@@ -1,24 +1,26 @@
 extends layout
 
 block content
-  h1 Threads
-  p Welcome to #{title}
-  div
-    table
-      tr 
-        th(class="upvote")
-        th(class="downvote")
-        th(class="thread-name")
-      tr(class="thread-row")
-        td(class="upvote-icon")
-          div
-            i(class="material-icons") thumb_up
-            text 100
-        td(class="downvote-icon")
-          div
-            i(class="material-icons") thumb_down
-            text 4
-        td(class="thread-name")
-          h6 How to make tables with pug!
-  link(rel='stylesheet', href='/stylesheets/thread_style.css')
+  div(class="container")
+    h1 Threads
+    h4=message
+    div
+      table
+        tr 
+          th(class="upvote")
+          th(class="downvote")
+          th(class="thread-name")
+        each thread in threads
+            tr(class="thread-row hoverable", onclick="window.location='/thread/"+thread._id+"';")
+              td(class="upvote-icon")
+                div
+                  i(class="material-icons") thumb_up
+                  text 100
+              td(class="downvote-icon")
+                div
+                  i(class="material-icons") thumb_down
+                  text 4
+              td(class="thread-name")
+                h6=thread.threadname
+    link(rel='stylesheet' href='/stylesheets/thread_style.css')
 

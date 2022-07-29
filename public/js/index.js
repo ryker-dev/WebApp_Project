@@ -1,3 +1,5 @@
+const Thread = require("../models/Thread");
+
 if (document.readyState !== "loading") {
     initializeCodeLogin();
   } else {
@@ -7,9 +9,11 @@ if (document.readyState !== "loading") {
   }
   
   function initializeCodeLogin() {
-    loadPosts();
+    let elems = document.querySelectorAll(".sidenav");
+    let instances = M.Sidenav.init(elems, {});
+    //loadPosts();
 }
 
-function loadPosts() {
-    
-}
+/* function loadPosts() {
+    Thread.find
+} */
