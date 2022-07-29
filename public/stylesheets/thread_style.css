@@ -1,0 +1,24 @@
+.material-icons {
+}
+
+.upvote-icon, .downvote-icon {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.upvote-counter, .downvote-counter {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.upvote-icon {
+}
+
+.thread-name {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.upvotes {
+    width: 2rem;
+}
