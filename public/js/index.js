@@ -1,4 +1,4 @@
-const Thread = require("../models/Thread");
+import M from 'materialize-css';
 
 if (document.readyState !== "loading") {
     initializeCodeLogin();
@@ -11,7 +11,7 @@ if (document.readyState !== "loading") {
   function initializeCodeLogin() {
     let elems = document.querySelectorAll(".sidenav");
     let instances = M.Sidenav.init(elems, {});
-    //loadPosts();
+    loadPosts();
 }
 
 /* function loadPosts() {
