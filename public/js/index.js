@@ -1,4 +1,4 @@
-import M from 'materialize-css';
+//import M from 'materialize-css';
 
 if (document.readyState !== "loading") {
     initializeCodeLogin();
@@ -9,8 +9,8 @@ if (document.readyState !== "loading") {
   }
   
   function initializeCodeLogin() {
-    let elems = document.querySelectorAll(".sidenav");
-    let instances = M.Sidenav.init(elems, {});
+    //let elems = document.querySelectorAll(".sidenav");
+    //let instances = M.Sidenav.init(elems, {});
     loadPosts();
 }
 

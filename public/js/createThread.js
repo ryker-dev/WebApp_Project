@@ -1,4 +1,5 @@
 //import {M} from 'materialize-css';
+//const materialize = require('materialize-css');
 // Materialize refuses to work
 
 if (document.readyState !== "loading") {
