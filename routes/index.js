@@ -4,10 +4,12 @@ const router = express.Router();
 const fetch = require("node-fetch");
 const validateToken = require("../auth/validateToken.js")
 
+const PORT = process.env.PORT || 1234
+
 /* GET home page. */
 router.get("/", function (req, res, next) {
   /* Fetch all threads and pass data to pug for render*/
-  fetch("http://localhost:1234/api/thread", {
+  fetch(`http://localhost:${PORT}/api/thread`, {
     method: "GET",
   })
     .then((response) => response.json())
