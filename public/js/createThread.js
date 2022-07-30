@@ -12,10 +12,21 @@ if (document.readyState !== "loading") {
   
   function onSubmit(event) {
     event.preventDefault();
+
+    const authToken = localStorage.getItem("auth_token");
+    if (!authToken) {
+      const error = document.getElementById("error");
+      error.innerText = "You need to be logged in to post create a thread!"
+      return
+    }
+    
     const formData = new FormData(event.target);
     console.log("test");
     fetch("/api/thread/create", {
       method: "POST",
+      headers: {
+        "authorization": "Bearer " + authToken
+      },
       body: formData,
     })
       .then((response) => response.json())
