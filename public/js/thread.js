@@ -2,6 +2,9 @@ if (document.readyState !== "loading") {
     initializeCodeLogin();
   } else {
     document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
       initializeCodeLogin();
     });
   }

@@ -22,7 +22,7 @@ Database is MongoDB with mongoose. Models can be found in the */models* folder. 
 __Does not use frontside frameworks.__ Pages are made with PUG templates.  
 Materialize used for presentation and responsive design. Application will adapt to mobile screens.
 
-# Feature checklist
+# Mandatory requirements
 - [X] Backend with Node.js
 - [X] Backend does not use other languages apart from JS
 - [X] Utilizes a database
@@ -33,3 +33,6 @@ Materialize used for presentation and responsive design. Application will adapt 
 - [X] A page containing all posts with possibility to open individual posts
 - [X] Responsive design
 - [X] Has documentation describing the technology choices, installation, and user manual
+
+# Extra features
+- [X] Highlighting libraryr with *highlightjs*
