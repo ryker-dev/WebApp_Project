@@ -4,7 +4,7 @@ block content
   div(class="container")
     h1 Threads
     h4=message
-    a(class="waves-effect waves-light btn blue accent-3") Create Thread
+    a(class="waves-effect waves-light btn blue accent-3" href="/thread/create") Create Thread
       i(class="material-icons left") add
     div
       table
@@ -13,7 +13,7 @@ block content
           th(class="downvote")
           th(class="thread-name")
         each thread in threads
-            tr(class="thread-row hoverable", onclick="window.location='/thread/"+thread._id+"';")
+            tr(class="thread-row hoverable", onclick="window.location='/thread/get/"+thread._id+"';")
               td(class="upvote-icon")
                 div
                   i(class="material-icons") thumb_up

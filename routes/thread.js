@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const fetch = require("node-fetch");
 
-router.get("/:id", (req, res, next) => {
+router.get("/get/:id", (req, res, next) => {
   fetch(`http://localhost:1234/api/thread/${req.params.id}`, {
     method: "GET",
   })
@@ -22,6 +22,10 @@ router.get("/:id", (req, res, next) => {
     .catch(error => {
         console.log(error);
     });
+});
+
+router.get("/create", (req, res, next) => {
+  res.render('createThread', {});
 });
 
 module.exports = router;

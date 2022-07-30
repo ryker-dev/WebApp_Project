@@ -1,3 +1,5 @@
+import M from 'materialize-css';
+
 if (document.readyState !== "loading") {
   initializeCodeLogin();
 } else {

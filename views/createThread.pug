@@ -1,0 +1,21 @@
+extends layout 
+
+block content 
+    div(class="container")
+        h1 Create a new thread
+        //div(id="error" class="card-panel")
+        form(id="create-thread-form" action="" method="POST")
+            div(class="card-panel")
+                input(type="text" name="title" id="text" required)
+                label(for="text") Title
+            div(class="card-panel")
+                textarea(class="materialize-textarea" id="description" name="description" form="create-thread-form")
+                //input(type="text" name="description" id="description" required)
+                label(for="description") Description
+            div(class="card-panel")
+                textarea(class="materialize-textarea" id="code" name="code" form="create-thread-form")
+                //input(type="text" name="code" id="code" required)
+                label(for="code") Code
+            input(type="submit" name="submit" id="submit" value="Submit")
+    script(src="/js/createThread.js" type="module")
+    link(rel='stylesheet', href='/stylesheets/style.css')
