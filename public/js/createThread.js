@@ -16,12 +16,12 @@ if (document.readyState !== "loading") {
     const authToken = localStorage.getItem("auth_token");
     if (!authToken) {
       const error = document.getElementById("error");
-      error.innerText = "You need to be logged in to post create a thread!"
+      error.innerHTML = "<h4 class='red-text lighten-2'>You need to be logged in to create a thread!</>"
+      //window.location.href("#")
       return
     }
     
     const formData = new FormData(event.target);
-    console.log("test");
     fetch("/api/thread/create", {
       method: "POST",
       headers: {
