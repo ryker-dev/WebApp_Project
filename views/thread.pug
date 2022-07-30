@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  div(id="threadId" tId=threadId)
   div(class="container")
     h1=threadname
     h6 Posted #{date}
@@ -15,17 +16,13 @@ block content
     hr
 
     div
-      h4 Comments 
-      div 
-        p comments here 
-      div(id="error" class="card-panel")
-      hr
-      h5 Add comment
-      form(id="comment-form" action="" method="POST")
+      include comments.pug
+        //each comment in comments 
           div(class="card-panel")
-            textarea(class="materialize-textarea" id="comment" name="comment" form="comment-form")
-            label(for="comment") Comment text
-          input(type="submit" name="submit" id="submit" value="Submit")
+            textarea(class="materialize-textarea" id="text" name="text" form="comment-form" readonly) comment.text
+      //div(id="error" class="card-panel")
+      hr
+      include addComment.pug
 
   script(src="/js/thread.js")
 

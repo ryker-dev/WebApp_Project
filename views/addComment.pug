@@ -1,0 +1,7 @@
+h5 Add comment
+form(id="comment-form" action="" method="POST")
+    div(class="card-panel")
+        textarea(class="materialize-textarea" id="text" name="text" form="comment-form")
+        //label(for="comment") Comment text
+        input(class="waves-effect waves-light btn" type="submit" name="submit" id="submit" value="Submit")
+        input(type="hidden" id="threadId" name="threadId" value=threadId)

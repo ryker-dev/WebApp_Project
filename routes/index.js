@@ -2,6 +2,7 @@ const { request } = require("express");
 const express = require("express");
 const router = express.Router();
 const fetch = require("node-fetch");
+const validateToken = require("../auth/validateToken.js")
 
 /* GET home page. */
 router.get("/", function (req, res, next) {

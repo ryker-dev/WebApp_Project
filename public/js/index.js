@@ -9,5 +9,4 @@ if (document.readyState !== "loading") {
   }
   
 function initializeCodeLogin() {
-
 }

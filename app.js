@@ -16,6 +16,7 @@ const apiUserRouter = require('./api/user');
 const apiPrivateRouter = require('./api/private');
 const apiTodoRouter = require('./api/todos');
 const apiThreadRouter = require('./api/thread');
+const apiCommentRouter = require('./api/comment');
 
 
 const app = express();
@@ -45,6 +46,8 @@ app.use('/thread', threadRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/api/thread', apiThreadRouter);
+app.use('/api/comment', apiCommentRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

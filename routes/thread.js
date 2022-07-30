@@ -3,6 +3,10 @@ var router = express.Router();
 const fetch = require("node-fetch");
 
 router.get("/get/:id", (req, res, next) => {
+  let thread = {};
+  let comments = {};
+
+  /* Get thread data */
   fetch(`http://localhost:1234/api/thread/${req.params.id}`, {
     method: "GET",
   })
@@ -15,26 +19,31 @@ router.get("/get/:id", (req, res, next) => {
         });
       } else {
         const dateObj = new Date(data[0].date);
-        const format = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const dateString = dateObj.toLocaleDateString('en-GB', format);
-        console.log(dateString);
-        return res.render("thread", {
-            threadname: data[0].threadname,
-            description: data[0].description,
-            code: data[0].code,
-            date: dateString,
-            upvotes: data[0].upvotes,
-            downvotes: data[0].downvotes
-        });
+        const format = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        const dateString = dateObj.toLocaleDateString("en-GB", format);
+        thread = {
+          threadname: data[0].threadname,
+          threadId: req.params.id,
+          description: data[0].description,
+          code: data[0].code,
+          date: dateString,
+          upvotes: data[0].upvotes,
+          downvotes: data[0].downvotes,
+        };
+        res.render("thread", thread);
+
+        //res.render("comments", { message: "Hey Hey!" });
       }
-    })
-    .catch(error => {
-        console.log(error);
     });
 });
 
 router.get("/create", (req, res, next) => {
-  res.render('createThread', {});
+  res.render("createThread", {});
 });
 
 module.exports = router;
