@@ -35,4 +35,4 @@ Materialize used for presentation and responsive design. Application will adapt 
 - [X] Has documentation describing the technology choices, installation, and user manual
 
 # Extra features
-- [X] Highlighting libraryr with *highlightjs*
+- [X] Highlighting library with *highlightjs*
