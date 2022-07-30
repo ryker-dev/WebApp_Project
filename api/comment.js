@@ -13,7 +13,8 @@ const upload = multer({ storage });
 router.post(
     "/create",
     upload.none(),
-    /*validateToken,*/ (req, res, next) => {
+    validateToken,
+    (req, res, next) => {
         console.log(req.body);
       if (!req.body.text)
         return res.status(400).json({ message: "Missing text" });
