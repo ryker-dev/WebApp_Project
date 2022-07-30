@@ -10,3 +10,7 @@ a {
 .main-body {
   padding: 0px;
 }
+
+.container {
+  padding-bottom: 4rem;
+}
