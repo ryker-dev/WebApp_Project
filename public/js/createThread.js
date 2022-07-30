@@ -1,12 +1,12 @@
-import M from '/materialize-css/dist/js/materialize.min.js';
+//import {M} from 'materialize-css';
+// Materialize refuses to work
 
 if (document.readyState !== "loading") {
     initializeCodeLogin();
   } else {
     document.addEventListener("DOMContentLoaded", function () {
-        console.log("FUCKCKC");
-        let elems = document.querySelectorAll(".sidenav");
-        let instances = M.Sidenav.init(elems, options);
+        //let elems = document.querySelectorAll(".sidenav");
+        //let instances = M.Sidenav.init(elems, options);
         initializeCodeLogin();
     });
   }
@@ -17,11 +17,9 @@ if (document.readyState !== "loading") {
   }
   
   function onSubmit(event) {
-    console.log("TEST");
     event.preventDefault();
     const formData = new FormData(event.target);
     
-    /*
     fetch("/api/thread/create", {
       method: "POST",
       body: formData,
@@ -37,6 +35,6 @@ if (document.readyState !== "loading") {
             document.getElementById("error").innerHTML = "Generic error";
           }
         }
-      });*/
+      });
   }
   
