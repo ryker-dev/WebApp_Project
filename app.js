@@ -15,7 +15,6 @@ const logoutRouter = require('./routes/logout');
 const threadRouter = require('./routes/thread');
 const apiUserRouter = require('./api/user');
 const apiPrivateRouter = require('./api/private');
-const apiTodoRouter = require('./api/todos');
 const apiThreadRouter = require('./api/thread');
 const apiCommentRouter = require('./api/comment');
 
@@ -39,11 +38,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-//app.use('/user', usersRouter);
 app.use('/api/user', apiUserRouter);
 app.use('/api/private', apiPrivateRouter);
 app.use('/thread', threadRouter);
-//app.use('/api/todos', apiTodoRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
