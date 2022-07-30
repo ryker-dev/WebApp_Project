@@ -3,7 +3,28 @@ extends layout
 block content
   div(class="container")
     h1=threadname
+    h6 Posted #{date}
     h4=message
     div
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam consectetur delectus voluptatum, odio voluptates ipsum saepe, suscipit corrupti atque obcaecati libero nesciunt officia ullam, amet perferendis facilis. Dolore, velit voluptate!
+      div(class="card-panel")
+        textarea(class="materialize-textarea" readonly)=description
+      div(class="card-panel")
+        textarea(class="materialize-textarea" readonly)=code
+    hr
+
+    div
+      h4 Comments 
+      div 
+        p comments here 
+      div(id="error" class="card-panel")
+      hr
+      h5 Add comment
+      form(id="comment-form" action="" method="POST")
+          div(class="card-panel")
+            textarea(class="materialize-textarea" id="comment" name="comment" form="comment-form")
+            label(for="comment") Comment text
+          input(type="submit" name="submit" id="submit" value="Submit")
+
+  script(src="/js/thread.js")
+
 

@@ -6,17 +6,30 @@ const express = require("express");
 const router = express.Router();
 const validateToken = require("../auth/validateToken.js");
 const Thread = require("../models/Thread");
+const multer = require("multer")
+const storage = multer.memoryStorage();
+const upload = multer({storage})
 
-router.post("/create", /*validateToken,*/ (req, res, next) => {
-    console.log(req.body);
+router.post("/create", upload.none(),
+/*validateToken,*/ (req, res, next) => {
     if(!req.body.threadname) return res.status(400).json({message: "Missing threadname"})
     Thread.create({
-        threadname: req.body.threadname
+        threadname: req.body.threadname,
+        description: req.body.description,
+        code: req.body.code,
+        date: new Date(),
+        upvotes: 0,
+        downvotes: 0
     }, (err) => {
         if (err) throw err;
         return res.json({
             message: "Success",
-            threadname: req.body.threadname
+            threadname: req.body.threadname,
+            description: req.body.description,
+            code: req.body.code,
+            date: new Date(),
+            upvotes: 0,
+            downvotes: 0
         })
     })
   });

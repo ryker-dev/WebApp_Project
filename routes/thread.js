@@ -14,8 +14,17 @@ router.get("/get/:id", (req, res, next) => {
           message: "Could not fetch thread",
         });
       } else {
+        const dateObj = new Date(data[0].date);
+        const format = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = dateObj.toLocaleDateString('en-GB', format);
+        console.log(dateString);
         return res.render("thread", {
-            threadname: data[0].threadname
+            threadname: data[0].threadname,
+            description: data[0].description,
+            code: data[0].code,
+            date: dateString,
+            upvotes: data[0].upvotes,
+            downvotes: data[0].downvotes
         });
       }
     })

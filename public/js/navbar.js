@@ -1,13 +1,9 @@
-/* Loading threads is handled in routes/index.js */
-
 if (document.readyState !== "loading") {
     initializeCodeLogin();
   } else {
     document.addEventListener("DOMContentLoaded", function () {
+      let elems = document.querySelectorAll(".sidenav");
+      let instances = M.Sidenav.init(elems, {});
       initializeCodeLogin();
     });
   }
-  
-function initializeCodeLogin() {
-
-}
