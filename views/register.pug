@@ -3,7 +3,7 @@ extends layout
 block content
     div(class="container")
         h1 Register
-        div(id="error" class="card-panel")
+        div(id="error" class="card-panel error")
         form(action="/api/user/register" method="POST")
             label(for="email") Email
             input(type="email" name="email" id="email" required)

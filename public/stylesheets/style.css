@@ -18,3 +18,8 @@ a {
 /* textarea.materialize-textarea {
   border: 1rem;
 } */
+
+div.error {
+  border-radius: 0%;
+  box-shadow: none;
+}

@@ -1,6 +1,8 @@
 h5 Add comment
 form(id="comment-form" action="" method="POST")
-    div(id="error" class="card-panel")
+    //div(class="card-panel")
+        h4 You need to be logged in to write comments
+    div(id="error" class="card-panel error")
     div(class="card-panel")
         textarea(class="materialize-textarea" id="text" name="text" form="comment-form")
         //label(for="comment") Comment text
