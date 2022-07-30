@@ -11,6 +11,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/user');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const logoutRouter = require('./routes/logout');
 const threadRouter = require('./routes/thread');
 const apiUserRouter = require('./api/user');
 const apiPrivateRouter = require('./api/private');
@@ -45,6 +46,7 @@ app.use('/thread', threadRouter);
 //app.use('/api/todos', apiTodoRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/api/thread', apiThreadRouter);
 app.use('/api/comment', apiCommentRouter);
 
