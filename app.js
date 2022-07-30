@@ -14,7 +14,6 @@ const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 const threadRouter = require('./routes/thread');
 const apiUserRouter = require('./api/user');
-const apiPrivateRouter = require('./api/private');
 const apiThreadRouter = require('./api/thread');
 const apiCommentRouter = require('./api/comment');
 
@@ -39,7 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/user', apiUserRouter);
-app.use('/api/private', apiPrivateRouter);
 app.use('/thread', threadRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
