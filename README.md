@@ -9,7 +9,11 @@ Backend has been created with Express and served on port 1234 unless otherwise s
 The folder */routes* contains the *GET* requests to load and render pages.
 The folder */api* contains *GET* and *POST* requests. The api files are used to: login, register, and both fetch and create comments and threads. **These files do not render pages but provide data!**
 
-Authentication is done with JWT tokens with an expiration of 30 minutes.
+Authentication is done with JWT tokens with an expiration of 30 minutes. **The secret for the server should be placed in a /.env file with the name SECRET!**
+```
+SECRET=mysecret1234
+```
+To check if your secret is secure use https://jwt.io/
 
 ## Databse
 Database is MongoDB with mongoose. Models can be found in the */models* folder. Database stores users, comments, and posts.
