@@ -13,7 +13,7 @@ const upload = multer({ storage });
 router.post(
   "/create",
   upload.none(),
-  /*validateToken,*/ (req, res, next) => {
+  validateToken, (req, res, next) => {
     if (!req.body.threadname)
       return res.status(400).json({ message: "Missing threadname" });
     const obj = {

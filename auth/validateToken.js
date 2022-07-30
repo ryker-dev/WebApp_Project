@@ -13,6 +13,6 @@ module.exports = function (req, res, next) {
     if(err) return res.sendStatus(401);
     //console.log(user);
     req.user = user;
+    next();
   })
-  next();
 };
