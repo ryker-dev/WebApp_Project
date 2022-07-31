@@ -5,6 +5,7 @@ This project was made for the Web Applications course. A lot of the code was tak
 Copy the repository or download and extract the files. Run *npm install* to download dependencies.
 ```
 git clone https://github.com/ryker-dev/WebApp_Project.git
+cd WebApp_Project
 npm install
 ```
 
