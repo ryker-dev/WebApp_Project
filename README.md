@@ -8,7 +8,15 @@ git clone https://github.com/ryker-dev/WebApp_Project.git
 cd WebApp_Project
 npm install
 ```
-### Check the crucial section below before starting!
+### For the login system to work the server **must** have a .env file with a secret value. The repository does not come with a .env file!
+### Without a secret or the .env file the login will give a Generic Error
+
+Create a file named *.env* in the root folder where app.js is located and add the following values into the file:
+```
+SECRET=myverybadsecret-changethis
+PORT=1234
+```
+**Change the secret before launching your server: https://jwt.io/**
 
 The project can be served locally with the command `npm start`  
 For development it is recommended to use `npm run dev` which uses nodemon to automatically update the server to reflect changes when a file is saved.  
@@ -18,16 +26,6 @@ To enter the webpage connect to `http://localhost:1234/` or to `http://localhost
 **For a user to add posts and comments they must register and log in!**  
 Upon first install the database will be empty and no posts should be visible. Create a local account on the register page and log in to post and comment.
 
-## Crucial!
-### For the login system to work the server **must** have a *.env* file with a secret value. The repository does not come with a *.env* file!
-### Without a secret or the .env file the login will give a Generic Error
-
-Create a file named *.env* in the root folder where app.js is located and add the following values into the file:
-```
-SECRET=myverybadsecret-changethis
-PORT=1234
-```
-**Change the secret before launching your server: https://jwt.io/**
 # Documentation
 
 ## Backend
