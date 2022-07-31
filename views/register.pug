@@ -4,6 +4,8 @@ block content
     div(class="container")
         h1 Register
         div(id="error" class="card-panel error")
+            each error in errors
+                h4=error.msg
         form(action="/api/user/register" method="POST")
             label(for="email") Email
             input(type="email" name="email" id="email" required)
