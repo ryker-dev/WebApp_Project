@@ -13,6 +13,18 @@ For development it is recommended to use `npm run dev` which uses nodemon to aut
 
 To enter the webpage connect to `http://localhost:1234/` or to `http://localhost:PORT` with the respective port assigned in *.env*
 
+**For a user to add posts and comments they must register and log in!**  
+Upon first install the database will be empty and no posts should be visible. Create a local account on the register page and log in to post and comment.
+
+## Crucial!
+### For the login system to work the server **must** have a *.env* file with a secret value. The repository has a default .env file but __the secret should be changed before usage!__  
+### Without a secret or the .env file the login will give a Generic Error
+
+```
+SECRET=myverybadsecret-changethis
+PORT=1234
+```
+
 # Documentation
 
 ## Backend
@@ -22,9 +34,6 @@ The folder */routes* contains the *GET* requests to load and render pages.
 The folder */api* contains *GET* and *POST* requests. The api files are used to: login, register, and both fetch and create comments and threads. **These files do not render pages but provide data!**
 
 Authentication is done with JWT tokens with an expiration of 30 minutes. **The secret for the server should be placed in a /.env file with the name SECRET!**
-```
-SECRET=mysecret1234
-```
 To check if your secret is secure use https://jwt.io/
 
 ## Databse
