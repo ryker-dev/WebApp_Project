@@ -8,6 +8,7 @@ git clone https://github.com/ryker-dev/WebApp_Project.git
 cd WebApp_Project
 npm install
 ```
+### Check the crucial section below before starting!
 
 The project can be served locally with the command `npm start`  
 For development it is recommended to use `npm run dev` which uses nodemon to automatically update the server to reflect changes when a file is saved.  
